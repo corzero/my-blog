@@ -1,6 +1,6 @@
 ---
 title: 基于Promise的ajax封装
-date: 2019-09-21
+date: 2020-02-23
 tags:
   - js
 categories:
