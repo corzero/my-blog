@@ -1,3 +1,5 @@
+const { docItem, docMenu } = require('./docConfig')
+
 module.exports = {
   base: '',
   title: '阿晨同学',
@@ -28,19 +30,14 @@ module.exports = {
         icon: 'reco-home'
       },
       {
+        text: '文档',
+        icon: 'reco-message',
+        items: docItem
+      },
+      {
         text: '时间线',
         link: '/timeline/',
         icon: 'reco-date'
-      },
-      {
-        text: '文档',
-        icon: 'reco-message',
-        items: [
-          {
-            text: '浏览器原理',
-            link: '/docs/Browser/'
-          }
-        ]
       },
       {
         text: '更多',
@@ -54,9 +51,7 @@ module.exports = {
         ]
       }
     ],
-    sidebar: {
-      '/docs/Browser/': ['', '1.架构', '2.tcp-ip协议','3.http请求流程','4.输入URL','5.渲染流程']
-    },
+    sidebar:docMenu,
     type: 'blog',
     blogConfig: {
       category: {
