@@ -1,4 +1,5 @@
-const { docItem, docMenu } = require('./docConfig')
+const docMenu = require('./docConfig')
+const navConfig = require('./navConfig')
 
 module.exports = {
   base: '',
@@ -23,35 +24,8 @@ module.exports = {
   ],
   theme: 'reco',
   themeConfig: {
-    nav: [
-      {
-        text: '主页',
-        link: '/',
-        icon: 'reco-home'
-      },
-      {
-        text: '文档',
-        icon: 'reco-message',
-        items: docItem
-      },
-      {
-        text: '时间线',
-        link: '/timeline/',
-        icon: 'reco-date'
-      },
-      {
-        text: '更多',
-        icon: 'reco-message',
-        items: [
-          {
-            text: 'GitHub',
-            link: 'https://github.com/corzero',
-            icon: 'reco-github'
-          }
-        ]
-      }
-    ],
-    sidebar:docMenu,
+    nav: navConfig,
+    sidebar: docMenu,
     type: 'blog',
     blogConfig: {
       category: {
@@ -79,7 +53,7 @@ module.exports = {
     author: 'Dawn',
     authorAvatar: '/avatar.png',
     // record: 'xxxxx',
-    startYear: '2018'
+    startYear: '2019'
   },
   markdown: {
     lineNumbers: true
