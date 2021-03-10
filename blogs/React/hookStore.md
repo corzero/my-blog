@@ -95,7 +95,7 @@ const createStore = modelList => {
       const depsList = Store[modelName][Deps];
       // 这里需要获取拿到新的值，并获取其key和我们所依赖的属性进行比较
       // 如果depsList中的deps为undefined，则说明，只要值发生更改，那么就更新视图
-      // 为什么depsList是个数组，因为在hooks中，可能对同一个model，调用两次，
+      // 为什么depsList是个数组，因为在hooks中，可以多次调用
       // 当然这样似乎并不是很常见，但确保我们写的hook 能够正常使用，需要这样的容错。
       const newKeys = Object.keys(newValue);
       depsList.forEach(({ deps, setState }) => {

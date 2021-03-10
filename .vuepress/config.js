@@ -49,6 +49,11 @@ module.exports = {
     logo: '/logo.png',
     search: true,
     searchMaxSuggestions: 10,
+    // 自动形成侧边导航
+    subSidebar: 'auto',
+    sidebarDepth: 1,
+    displayAllHeaders: false,
+    // 更新字段
     lastUpdated: 'Last Updated',
     author: 'Dawn',
     authorAvatar: '/avatar.png',
