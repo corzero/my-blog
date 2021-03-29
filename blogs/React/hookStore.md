@@ -34,21 +34,21 @@ const listStore = {
 我们先设计一个方法，能够让他返回当前`Model`，同时在方法中能够使用其他Model的状态，如下代码：
 
 ```js
-const listAStore = (updateModel, getModel) => ({
+const listAStore = (setModel, getModel) => ({
   title: '状态管理',
   count: 10,
   changeName(){
-    updateModel({title:'状态修改了'})
+    setModel({title:'状态修改了'})
     // 如果当前状态依赖其他Model的状态呢？
     // const { otherTitle } = getModel('ModelName')
-    // updateModel({title: otherTitle + '依赖其他model' })
+    // setModel({title: otherTitle + '依赖其他model' })
   },
   changeCount(){
     // 当然我们也可以设计成一个function，
-    updateModel(state => ({count: Math.random()}))
+    setModel(state => ({count: Math.random()}))
     // 如果在A里面需要修改B的一些状态呢？
     // 我们可以在第二个参数追加一个字符串，即指定某个Store就好
-    updateModel({b:'b的新状态'}, 'listBStore')
+    setModel({b:'b的新状态'}, 'listBStore')
 
   }
 })
@@ -77,8 +77,8 @@ const createStore = modelList => {
     const objProperty = Object.defineProperty({}, Deps, { value: [] });
     const newModel = Object.create(objProperty);
 
-    // updateModel 方法，默认的model就是当前调用方法所在的model，当然也可以替换成其他的modelName
-    const updateModel = (newState = {}, modelName = model.name) => {
+    // setModel 方法，默认的model就是当前调用方法所在的model，当然也可以替换成其他的modelName
+    const setModel = (newState = {}, modelName = model.name) => {
       if (!isString(modelName)) {
         throw new Error(`modelName must be an object`);
       }
@@ -109,7 +109,7 @@ const createStore = modelList => {
     const getModel = modelName => Store[modelName] || Store[model.name]
 
     // 获取当前model值
-    const modelState = model(updateModel, getModel);
+    const modelState = model(setModel, getModel);
 
     // 需要对每个属性解析一下，然后添加到带有依赖的对象中
     Object.entries(modelState).forEach(([key, value]) => {
@@ -208,5 +208,6 @@ const demo = () => {
 
 
 ```
-## Demo
-完整的Dome戳👉[Demo](https://codesandbox.io/s/keen-varahamihira-p19qh)
+
+## Demo及不同库直接的性能差异对比
+完整的Dome戳 👉 [Demo](https://codesandbox.io/s/diff-react-hook-store-47snf)
