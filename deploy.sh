@@ -17,3 +17,14 @@ rm -rf public public.zip
 ssh root@web "cd /usr/blog;rm -rf public;unzip public.zip; rm public.zip" 
 
 echo "完成部署..."
+
+echo "同步git..."
+
+git add .
+
+git commit -am"chore: update md by script execution"
+
+git push
+
+echo "全部完成..."
+
