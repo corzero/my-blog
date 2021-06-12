@@ -4,7 +4,7 @@ date: 2019-09-15
 tags:
   - es6
 categories:
-  - JavaScript
+  - JS
 ---
 
 ## JS中的继承方式

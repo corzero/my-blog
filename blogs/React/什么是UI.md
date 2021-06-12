@@ -4,7 +4,7 @@ date: 2019-10-01
 tags:
   - React
 categories:
-  - JavaScript
+  - JS
 ---
 
 什么是UI？
@@ -57,7 +57,7 @@ Vue也觉得调动警力实施封锁实在是太粗暴了，现代社会的命�
 
 那么如何监控变量呢？
 
-JavaScript底层有实现，通过`Object.defineProperty`接口的`getter`和`setter`，可以轻易监控变量的读取和更新。当然ES6开放了更加强大的`Reflect`和`Proxy`接口。
+JS底层有实现，通过`Object.defineProperty`接口的`getter`和`setter`，可以轻易监控变量的读取和更新。当然ES6开放了更加强大的`Reflect`和`Proxy`接口。
 
 具体操作呢，在初始化阶段，Vue会把挂在UI上的变量都读一遍，触发`getter`，然后`getter`会为每个变量维护一个数组(因为一个变量可能被多次应用于UI)，变量以及对应的回调被绑在一起push进数组里。每次开发者更新变量的值就会触发`setter`，`setter`的作用就是执行回调。当然，回调里就是更新UI的动作。
 

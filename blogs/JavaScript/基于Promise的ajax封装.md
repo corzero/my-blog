@@ -4,7 +4,7 @@ date: 2019-09-12
 tags:
   - js
 categories:
-  - JavaScript
+  - JS
 ---
 
 基于把原生`ajax`封装为`Promise`形式。

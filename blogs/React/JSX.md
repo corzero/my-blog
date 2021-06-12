@@ -4,7 +4,7 @@ date: 2019-10-03
 tags:
   - React
 categories:
-  - JavaScript
+  - JS
 ---
 
 
@@ -69,7 +69,7 @@ XHP把标签与字符串区别开来了，变成脚本语法的一部分。
 
 其实facebook一直在前端组件化方面做各种尝试，但都不是特别成功。
 
-直到2013年，工程师Jordan Walke提出一个大胆的想法：把XHP的写法迁移到JavaScript中来。即便有XHP的案例在前，大家还是觉得这个想法很疯狂。
+直到2013年，工程师Jordan Walke提出一个大胆的想法：把XHP的写法迁移到JS中来。即便有XHP的案例在前，大家还是觉得这个想法很疯狂。
 
 不过，facebook极为优秀的工程师文化最终促成了这种尝试。这一尝试不得了，开了天眼。
 
@@ -89,7 +89,7 @@ const element = <h1>Hello React!</h1>;
 
 #### 语法
 
-标签的写法和HTML一样，只不过融入到了JavaScript中。
+标签的写法和HTML一样，只不过融入到了JS中。
 
 组件，其实就是自定义标签，首字母必须大写，为了与原生标签区别开来。
 
@@ -226,7 +226,7 @@ export default App;
 
 这里就要讲到JSX的编译。
 
-因为JSX不是正确的JavaScript语法，它要经过编译才能被浏览器识别。
+因为JSX不是正确的JS语法，它要经过编译才能被浏览器识别。
 
 目前JSX的编译工作是由babel来完成的。
 
@@ -266,7 +266,7 @@ const app = React.createElement(
 
 由于React16引入了Fiber机制，使得返回多标签成为可能(并不清楚原因)。
 
-同时也回答了为什么标签的`class`属性和`for`属性要用`className`属性和`htmlFor`属性代替。在标签里属性怎么写都无所谓，但是`class`和`for`是JavaScript中的关键字，所以要换一种写法。
+同时也回答了为什么标签的`class`属性和`for`属性要用`className`属性和`htmlFor`属性代替。在标签里属性怎么写都无所谓，但是`class`和`for`是JS中的关键字，所以要换一种写法。
 
 React里面传递props有一种写法，如果传递的是一个对象，可以用扩展运算符很方便的传递。
 

@@ -4,7 +4,7 @@ date: 2019-10-05
 tags:
   - React
 categories:
-  - JavaScript
+  - JS
 ---
 
 React存在的意义就是状态与UI分离，使开发者不知有DOM，无论魏晋。
