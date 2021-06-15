@@ -3,6 +3,7 @@ const navConfig = require('./navConfig')
 
 module.exports = {
   base: '',
+  lang: 'zh-CN',
   title: '阿晨同学',
   description: "Don't waste life in doubts and fears. （ Emerson ）",
   dest: 'public',
@@ -20,7 +21,10 @@ module.exports = {
         name: 'viewport',
         content: 'width=device-width,initial-scale=1,user-scalable=no'
       }
-    ]
+    ],
+    ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/jquery/3.4.1/jquery.min.js' }],
+        ['script', { src: 'https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js' }],
+        ['link', { rel: 'stylesheet', href: 'https://cdn.bootcdn.net/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css' }]
   ],
   theme: 'reco',
   themeConfig: {
@@ -62,5 +66,5 @@ module.exports = {
   },
   markdown: {
     lineNumbers: true
-  }
+  },
 }

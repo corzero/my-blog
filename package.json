@@ -11,5 +11,6 @@
     "vuepress": "1.7.1",
     "vuepress-theme-reco": "1.6.1"
   },
-  "description": "blog"
+  "description": "blog",
+  "dependencies": {}
 }
