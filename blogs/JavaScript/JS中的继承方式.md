@@ -2,7 +2,7 @@
 title: JS中的继承方式
 date: 2019-09-15
 tags:
-  - es6
+  - 面试
 categories:
   - JS
 ---

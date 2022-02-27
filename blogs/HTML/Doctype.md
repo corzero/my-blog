@@ -2,7 +2,7 @@
 title: DOCTYPE是什么？
 date: 2020-05-11
 tags:
-  - 面试题
+  - 面试
 categories:
   - HTML
 ---
