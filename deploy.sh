@@ -6,21 +6,24 @@ npm run build
 
 echo "正在压缩...."
 
-zip -q -r public.zip ./public
+# zip -q -r public.zip ./public
+tar -zcvf public.tar.gz ./public
 
-zip -q -r images.zip ./.vuepress/public/image
+# zip -q -r images.zip ./.vuepress/public/image
+tar -zcvf images.tar.gz ./.vuepress/public/image
 
 echo "正在上传...."
 
-scp public.zip root@web:/usr/blog
+scp public.tar.gz root@web:/usr/blog
 
-rm -rf public public.zip
+rm -rf public public.tar.gz
 
-ssh root@web "cd /usr/blog;rm -rf public;unzip public.zip; rm public.zip" 
+# ssh root@web "cd /usr/blog;rm -rf public;unzip public.zip; rm public.zip" 
+ssh root@web "cd /usr/blog;rm -rf public;tar -xzvf public.tar.gz; rm public.tar.gz" 
 
-scp images.zip root@web:/usr/blog/public
+scp images.tar.gz root@web:/usr/blog/public
 
-rm -rf images.zip
+rm -rf images.tar.gz
 
 echo "完成部署..."
 
