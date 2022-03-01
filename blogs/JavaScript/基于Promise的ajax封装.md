@@ -2,7 +2,7 @@
 title: 基于Promise的ajax封装
 date: 2019-09-12
 tags:
-  - js
+  - 基础知识
 categories:
   - JS
 ---
